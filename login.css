@@ -12,7 +12,6 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url(girl.jpg) no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -22,10 +21,10 @@ body{
     width: 420px;
     background: purple;
     border: 2px solid rgba(252, 247, 247, 0.2);
-    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
     color: white;
     border-radius: 10px;
     padding: 30px 40px;
+    box-shadow: 0 0 30px rgb(104, 27, 27);
 }
 
 .wrapper h1{

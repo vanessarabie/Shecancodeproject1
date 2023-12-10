@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav bars and logo</title>
+    <link rel="stylesheet" href="dropdown.css">
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+   <div class="dropdown">
+    <div class="select">
+        <span class="selected">ICT</span>
+        <div class="caret"></div>
+    </div>
+    <ul class="menu">
+        <li>Frontend development</li>
+        <li>Backend development</li>
+        <li>software development</li>
+        <li class="active">Ui/ Ux Designer</li>
+        <li>Mobile Application</li>
+    </ul>
+   </div>
+
+   <div class="dropdown">
+    <div class="select">
+        <span class="selected">Social medias</span>
+        <div class="caret"></div>
+    </div>
+    <ul class="menu">
+        <li class="active">Facebook</li>
+        <li>instagram</li>
+        <li>twitter</li>
+        <li>linkedin</li>
+        <li>tiktok</li>
+    </ul>
+   </div>
+
+   <script>
+
+    const dropdowns = document.querySelectorAll('.dropdown');
+     
+
+         dropdowns.forEach(dropdown =>{
+
+            // select.classList.toggle('select-clicked');
+
+            const select = dropdown.querySelector('.select');
+            const caret = dropdown.querySelector('.caret');
+            const menu = dropdown.querySelector('.menu');
+            const options = dropdown.querySelectorAll('.menu li');
+            const selected = dropdown.querySelector('.selected');
+
+
+            select.addEventListener('click', () =>{
+
+                select.classList.toggle('select-clicked');
+
+                caret.classList.toggle('caret-rotate');
+
+                menu.classList.toggle('menu-open');
+            } );
+           
+          options.forEach(option => {
+
+             
+            option.addEventListener('click', () => {
+
+            
+           
+            selected.innerText = option.innerText;
+
+            select.classList.remove('select-clicked');
+            caret.classList.remove('caret-rotate');
+
+            menu.classList.remove('menu-open');
+
+            options.forEach(option => {
+
+                option.classList.remove('active');
+            });
+
+           option.classList.add('active');
+          });
+         });
+        });
+   </script>
+    
+</body>
+</html>
